@@ -29,6 +29,17 @@ routeClient.get('/totalities', (req, res) => {
     res.json({ clients, enterprise, realties })
 })
 
+routeClient.get('/totalities/:id', (req, res) => {
+    const client= clientsMock.find((client)=>client._id==req.params.id)
+    let enterprise = client.enterprises.length
+    let realties = 0
+   
+    client.enterprises.forEach((enterprise) => {
+        realties += parseInt(enterprise.realties)
+    })
+
+    res.json({ enterprise, realties })
+})
 routeClient.get('/:id', (req, res) => {
     const client = clientsMock.find((clients) => clients._id == req.params.id)
 
