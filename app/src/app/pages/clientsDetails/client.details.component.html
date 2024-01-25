@@ -1,0 +1,25 @@
+<div class="all">
+
+
+  <div class="profile-container">
+    <div class="company-details">
+      <img [src]="client.image_src" alt="{{ client.name }} Logo">
+      <h2>{{ client.name }}</h2>
+    </div>
+    <p class="info"> a empresa possui {{totals.enterprise}} empreendimentos e {{totals.realties}} Imóveis/Unidades</p>
+    <h4>Empreendimentos:</h4>
+    <div class="enterprises-list">
+      <div *ngFor="let enterprise of client.enterprises"  class="enterprise">
+        <img *ngIf="enterprise.image_src" [src]="enterprise.image_src" alt="{{ enterprise.name }} Logo">
+        <img *ngIf="!enterprise.image_src" src="assets/enterprise.png" alt="{{ enterprise.name }} Logo">
+        
+       
+        <div class="enterprise-details">
+          <h3>{{ enterprise.name }}</h3>
+          <p><strong>Realties:</strong> {{ enterprise.realties }}</p>
+          <p><strong>Enterprise ID:</strong> {{ enterprise._id }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

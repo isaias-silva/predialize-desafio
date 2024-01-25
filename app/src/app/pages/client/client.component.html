@@ -1,4 +1,10 @@
 <div>
+
+  <div class="search">
+    <input type="text" placeholder="pesquisar por nome" (input)="onInputChange($event.target.value)">
+  </div>
+
+  <p class="info">a plataforma conta com um total de {{totals.clients}} clientes, com ao todo {{totals.enterprise}} empreendimentos e {{totals.realties}} Imóveis/Unidades</p>
     <div class="itens">
       <app-client-card *ngFor="let client of clients" [client]="client"></app-client-card>
     </div>

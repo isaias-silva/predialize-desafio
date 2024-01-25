@@ -43,7 +43,7 @@ routeClient.get('/totalities/:id', (req, res) => {
 routeClient.get('/:id', (req, res) => {
     const client = clientsMock.find((clients) => clients._id == req.params.id)
 
-    res.json({ client })
+    res.json( client )
 })
 
 module.exports={

@@ -9,6 +9,7 @@ import { ClientService } from "src/app/services/client.service";
 export class ClientComponent implements OnInit {
   constructor(private clientService: ClientService) { }
   clients: ClientsGlobal[];
+  totals: TotalsGeneric
 
   ngOnInit(): void {
     this.clientService.getAll().subscribe(
@@ -19,5 +20,24 @@ export class ClientComponent implements OnInit {
         console.error('Erro ao obter clientes', error);
       }
     );
+    this.clientService.getGeneralTotals().subscribe(
+      (info: TotalsGeneric) => {
+        this.totals = info
+      },
+      (error) => {
+        console.error('Erro ao obter clientes', error);
+      }
+    )
+  }
+  onInputChange(query: string): void {
+    this.clientService.getByName(query).subscribe(
+      (clients: ClientsGlobal[]) => {
+        this.clients = clients;
+      },
+      (error) => {
+        console.error('Erro ao obter clientes', error);
+      }
+    );
+
   }
 }

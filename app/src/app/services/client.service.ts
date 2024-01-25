@@ -23,8 +23,8 @@ export class ClientService {
 
 
     return this.getAll().pipe(
-      map((clientes: ClientsGlobal[]) => clientes.find(cliente => cliente.name === name))
-    );
+      map((clientes: ClientsGlobal[]) => clientes.filter(cliente => cliente.name.toLowerCase().includes(name.toLowerCase()))))
+    
 
   }
 

@@ -1,19 +1,20 @@
 // client-card.component.scss
 
 .card {
+  position: relative;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
   width: 300px;
-  padding:4px;
+  padding: 4px;
   min-height: 200px;
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 20px;
-   font-family: 'Roboto', sans-serif;
- 
+
+
   &:hover {
     transform: scale(1.05);
     cursor: pointer;
@@ -35,5 +36,13 @@
 
   p {
     margin: 5px 0;
+  }
+  a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    top: 0;
+  
   }
 }
