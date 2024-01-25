@@ -7,8 +7,17 @@ import { ClientService } from "src/app/services/client.service";
   styleUrls: ["./client.component.scss"],
 })
 export class ClientComponent implements OnInit {
-  constructor(private clienService: ClientService) { }
-  ngOnInit() {
+  constructor(private clientService: ClientService) { }
+  clients: ClientsGlobal[];
 
+  ngOnInit(): void {
+    this.clientService.getAll().subscribe(
+      (clients: ClientsGlobal[]) => {
+        this.clients = clients;
+      },
+      (error) => {
+        console.error('Erro ao obter clientes', error);
+      }
+    );
   }
 }

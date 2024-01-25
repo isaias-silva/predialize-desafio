@@ -3,6 +3,9 @@ import { Routes } from '@angular/router';
 
 import { ClientComponent } from './client.component';
 import { ClientService } from 'src/app/services/client.service';
+import { ClientCardComponent } from 'src/app/components/client.card/client.card.component';
+import { ClientCardModule } from 'src/app/components/client.card/client.card.module';
+import { CommonModule } from '@angular/common';
 
 export const ClientRoutes: Routes = [
   {
@@ -13,6 +16,7 @@ export const ClientRoutes: Routes = [
 
 @NgModule({
   declarations: [ClientComponent],
-  providers:[ClientService]
+  providers:[ClientService],
+  imports:[ClientCardModule,CommonModule]
 })
 export class ClientModule {}

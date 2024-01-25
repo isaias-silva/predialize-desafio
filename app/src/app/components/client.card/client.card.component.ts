@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-client.card',
+  selector: 'app-client-card',
   templateUrl: './client.card.component.html',
-  styleUrls: ['./client.card.component.sass']
+  styleUrls: ['./client.card.component.scss']
 })
 export class ClientCardComponent implements OnInit {
-
+  @Input() client: ClientsGlobal;
   constructor() { }
 
   ngOnInit() {

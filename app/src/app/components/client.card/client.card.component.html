@@ -1,4 +1,10 @@
-<div>
 
-    
+
+<div *ngIf="client" class="card">
+    <img [src]="client.image_src" alt="{{ client.name }} Image" />
+    <h2>{{ client.name }}</h2>
+    <p>ID: {{ client._id }}</p>
+    <p>Empreendimentos: {{ client.enterprises }}</p>
+    <p>Realties: {{ client.realties }}</p>
 </div>
+  

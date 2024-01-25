@@ -1,0 +1,39 @@
+// client-card.component.scss
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  width: 300px;
+  padding:4px;
+  min-height: 200px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+   font-family: 'Roboto', sans-serif;
+ 
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    border: 2px solid #00000016;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+
+  p {
+    margin: 5px 0;
+  }
+}
