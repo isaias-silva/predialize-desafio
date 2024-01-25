@@ -10,9 +10,10 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { PagesModule } from "./pages/pages.module";
 import { NavbarModule } from "./navigation/navebar.module";
+import { Client } from './components/client.card/client.card.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, Client.CardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
